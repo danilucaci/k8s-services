@@ -15,10 +15,6 @@ spec:
       containers:
         - name: event-bus
           image: danilucaci/event-bus
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -27,7 +23,6 @@ metadata:
 spec:
   selector:
     app: event-bus
-  type: ClusterIP
   ports:
     - name: event-bus
       protocol: TCP

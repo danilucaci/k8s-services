@@ -15,10 +15,6 @@ spec:
       containers:
         - name: posts
           image: danilucaci/posts
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -27,7 +23,6 @@ metadata:
 spec:
   selector:
     app: posts
-  type: ClusterIP
   ports:
     - name: posts
       protocol: TCP
